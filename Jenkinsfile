@@ -46,7 +46,7 @@ stage('Test'){
 
         stage('Sonar Analysis') {
             environment {
-                scannerHome = tool "${mysonarscanner4}"
+                scannerHome = tool "${SONARSCANNER}"
             }
             steps {
                withSonarQubeEnv("${SONARSERVER}") {
