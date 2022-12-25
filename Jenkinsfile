@@ -33,6 +33,7 @@ pipeline {
                 }
             }
         }
+    }
 
 /*	stage('UNIT TEST'){
             steps {
