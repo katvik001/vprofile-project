@@ -127,8 +127,7 @@ stage('Test'){
             }
         }
     }
-}
-post {
+    post {
         always {
             echo 'Slack Notifications.'
             slackSend channel: '#jenkinscicd',
