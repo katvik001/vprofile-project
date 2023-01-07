@@ -22,7 +22,7 @@ pipeline {
         NEXUS_LOGIN = 'NexusLogin'
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
-        NEXUS_PASS = 'admin'
+        
     }
 
     stages {
