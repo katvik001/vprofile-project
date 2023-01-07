@@ -22,7 +22,7 @@ pipeline {
         NEXUS_LOGIN = 'NexusLogin'
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
-        NEXUSPASS = credentials('nexuspass')
+        NEXUSPASS = credentials('secretpass')
     }
 
     stages {
@@ -102,11 +102,11 @@ stage('Test'){
                 playbook    : 'ansible/site.yml',
                 installation: 'ansible',
                 colorized   : true,
-			    credentialsId: 'applogin',
-			    disableHostKeyChecking: true,
+		credentialsId: 'applogin',
+		disableHostKeyChecking: true,
                 extraVars   : [
-                   	USER: "admin",
-                    PASS: "${NEXUSPASS}",
+                   		USER: "admin",
+                    		PASS: "${NEXUSPASS}",
 			        nexusip: "172.31.2.93",
 			        reponame: "vprofile-release",
 			        groupid: "QA",
