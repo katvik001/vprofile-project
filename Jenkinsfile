@@ -22,7 +22,6 @@ pipeline {
         NEXUS_LOGIN = 'NexusLogin'
         SONARSERVER = 'sonarserver'
         SONARSCANNER = 'sonarscanner'
-		NEXUSPASS = credentials('nexuspass')
 											
     }
 
@@ -112,7 +111,7 @@ stage('Test'){
 			    disableHostKeyChecking: true,
                 extraVars   : [
                    	USER: "admin",
-                    PASS: "${NEXUSPASS}",
+                    PASS: "admin",
 			        nexusip: "'172.31.2.93'",
 			        reponame: "vprofile-release",
 			        groupid: "QA",
