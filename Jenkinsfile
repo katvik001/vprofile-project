@@ -4,7 +4,7 @@ pipeline {
 
 	tools {
         maven "MAVEN3"
-	jdk "OracleJDK8"
+        jdk "OracleJDK8"
     }
 
     environment {
@@ -100,7 +100,7 @@ pipeline {
         stage('Kubernetes Deploy') {
 	        agent { label 'KOPS' }
                 steps {
-                    sh "helm upgrade --install --force vproifle-stack helm/vprofilecharts --set appimage=${registry}:${BUILD_NUMBER} --namespace prod"
+                    sh "sudo helm upgrade --install --force vproifle-stack helm/vprofilecharts --set appimage=${registry}:${BUILD_NUMBER} --namespace prod"
             }
         }
 
